@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shagun Pathak | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="navbar">
+        <div class="nav-inner">
+            <div class="logo">PotShagun<span>.</span></div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <p class="hero-tag">Python & Web Developer</p>
+                <h1>Hi, I'm <span>Shagun Pathak</span></h1>
+                <p class="hero-subtitle">
+                    I build clean and simple web experiences using Python, Flask, Django,
+                    HTML, CSS and JavaScript.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn primary">Hire Me</a>
+                    <a href="#projects" class="btn ghost">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <p>Currently learning:</p>
+                <ul>
+                    <li>Flask mini web apps</li>
+                    <li>REST APIs with Python</li>
+                    <li>Responsive UI with HTML & CSS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-text">
+                I'm a passionate web developer focused on building real-world projects.
+                I enjoy turning ideas into working web applications using Python in the
+                backend and simple, user-friendly interfaces on the frontend.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="pill-list">
+                <span class="pill">Python</span>
+                <span class="pill">Flask</span>
+                <span class="pill">Django</span>
+                <span class="pill">HTML5</span>
+                <span class="pill">CSS3</span>
+                <span class="pill">JavaScript</span>
+                <span class="pill">SQLite</span>
+                <span class="pill">Git & GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <h3>EZ Maps of India</h3>
+                    <p>
+                        A web project to display easy and interactive maps of India using
+                        HTML, CSS, JavaScript and Django for backend logic.
+                    </p>
+                    <p class="card-meta">Tech: HTML, CSS, JS, Django</p>
+                </article>
+
+                <article class="card">
+                    <h3>E-Village</h3>
+                    <p>
+                        A digital village platform built with Django that helps villagers
+                        access information and basic online services in one place.
+                    </p>
+                    <p class="card-meta">Tech: HTML, CSS, JS, Django, SQLite</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2>Contact Me</h2>
+
+            {% if message %}
+                <p class="alert success">{{ message }}</p>
+            {% endif %}
+
+            <form method="POST" action="/" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>© 2025 Shagun Pathak</p>
+            <p class="footer-note">Built with Python & Flask</p>
+        </div>
+    </footer>
+</body>
+</html>
